@@ -1,4 +1,2 @@
-### Object Detection Study
-졸업논문 작성을 위한 객체 탐지 공부 레퍼지토리
-
-colab을 이용해 작성합니다.
+### Real-time Object Detection with Drone
+드론을 활용한 실시간 객체 탐지 관련 졸업 논문 레퍼지토리
