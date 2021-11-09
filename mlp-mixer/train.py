@@ -19,7 +19,7 @@ if __name__ == '__main__':
     parser.add_argument("--model-folder", default='{}/model/mlp/'.format(home_dir), type=str)
     parser.add_argument("--num-classes", default=6, type=int)
     parser.add_argument("--batch-size", default=256, type=int)
-    parser.add_argument("--epochs", default=300, type=int)
+    parser.add_argument("--epochs", default=3000, type=int)
     parser.add_argument("--dc", default=2048, type=int, help='Token-mixing units')
     parser.add_argument("--ds", default=256, type=int, help='Channel-mixing units')
     parser.add_argument("--c", default=512, type=int, help='Projection units')
@@ -79,10 +79,10 @@ if __name__ == '__main__':
 
     loss_object = tf.keras.losses.SparseCategoricalCrossentropy()
 
-    earlystopping = EarlyStopping(monitor='val_loss', patience=10)
+    # earlystopping = EarlyStopping(monitor='val_loss', patience=20)
     lr_scheduler = tf.keras.experimental.CosineDecayRestarts(
         args.learning_rate, 
-        first_decay_steps=10, 
+        first_decay_steps=100, 
         t_mul=2.0, 
         m_mul=1.0, 
         alpha=0.0,
@@ -106,7 +106,7 @@ if __name__ == '__main__':
         epochs=args.epochs,
         batch_size=args.batch_size,
         validation_data=val_ds,
-        callbacks=[earlystopping]
+        # callbacks=[earlystopping]
         )
 
     mlpmixer.save(args.model_folder)
