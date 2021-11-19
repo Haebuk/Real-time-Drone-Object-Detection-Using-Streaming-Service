@@ -8,15 +8,22 @@
     드론에서 촬영되는 영상을 스트리밍 서비스로 전송 -> 스트리밍 URL을 모델에 입력하여 출력되는 영상에 대해 실시간으로 객체 탐지 -> Bounding Box가 씌워진 영상을 실시간으로 로컬 디스플레이로 출력 가능
 
 ### 적용 영상
+- 영상이 빨리 지나가거나 끊길 수록 FPS가 낮습니다.
 업로드 된 유튜브 영상을 사용한 경우:
-  - yolov5n
+  - YOLOv5n(GPU)
 
       ![yolovn5n](etc/yolov5n-youtube.gif)
-  - yolov5s
+  - YOLOv5s(GPU)
 
       ![yolovn5s](etc/yolov5s-youtube.gif)
-  - yolov5m
+  - YOLOv5m(GPU)
 
       ![yolovn5m](etc/yolov5m-youtube.gif)
 
-실시간 스트리밍 영상을 사용할 경우:(용량이 매우 커서 편집중에 있습니다. )
+실시간 스트리밍 영상을 사용할 경우:
+ - YOLOv5n(CPU)
+    
+    ![yolov5n-stream](etc/yolov5n-stream-cpu.gif)
+ - YOLOv5m(GPU)
+
+    ![yolov5m-stream](etc/yolov5m-stream-gpu.gif)
